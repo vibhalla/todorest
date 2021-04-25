@@ -1,0 +1,36 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- master
+
+pool: Default
+ 
+steps:
+
+- script: sudo apt update
+  displayName: 'update a repo'
+
+- script: |
+  sudo apt install tree maven openjdk-8-jdk -y -y
+  displayName: 'install dependency'
+
+- script: sudo mvn clean
+  displayName: 'perform maven clean'
+
+- script: sudo mvn compile
+  displayName: 'perform maven compile'
+
+- script: sudo mvn test
+  displayName: 'perform maven tests'
+
+- script: sudo mvn surefire-report:report
+  displayName: 'generate reports'
+
+- script: sudo mvn package
+  displayName: 'perform maven package'
+
+- script: sudo zip -r site-anil.zip target/site/*
+  displayName: 'zip all unit test reports'
