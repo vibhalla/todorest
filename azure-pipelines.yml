@@ -13,8 +13,7 @@ steps:
 - script: sudo apt update
   displayName: 'update a repo'
 
-- script: 
-  sudo apt install tree maven openjdk-8-jdk -y 
+- script: sudo apt install tree maven openjdk-8-jdk -y 
   displayName: 'install dependency'
 
 - script: sudo mvn clean
