@@ -65,17 +65,11 @@
 	    </plugins>
 	  </reporting>
 	<build>
-        <pluginManagement>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.13.0</version>
-            </plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
@@ -97,7 +91,7 @@
 				</executions>
 			</plugin>
 		</plugins>
-        </pluginManagement>
+       
 	</build>
 
 </project>
